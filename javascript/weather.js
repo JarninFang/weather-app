@@ -25,7 +25,7 @@ function showPosition(position) {
 		success: function(xml) {
 			console.log("success");
 			var parsedXML = $.parseXML(xml);
-			$(parseXML).find("geoname").each(function() {
+			$(parsedXML).find("geoname").each(function() {
 				console.log($('[name]', this).text());
 			})
 			console.log("xml: " + parsedXML);
