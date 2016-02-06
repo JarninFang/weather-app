@@ -17,6 +17,7 @@ function showPosition(position) {
 
 	getUrl = getUrl + str;
 	console.log("The url is: " + getUrl);
+
 	//Make ajax call to API to get city name
 	$.ajax({
 		url: getUrl,
@@ -36,7 +37,32 @@ function showPosition(position) {
 			console.log( "The request is complete!" );
 		}	
 	});
-	$('#location-text').text();
+
+	//Make ajax call to API to get weather
+	getUrl = "http://api.openweathermap.org/data/2.5/weather?"
+	coordParams = {
+		lat: position.coords.latitude,
+		lon: position.coords.longitude
+	};
+	str = jQuery.param(coordParams);
+	getUrl = getUrl + str;
+
+	$.ajax({
+		url: getUrl,
+		type:"GET",
+		success: function(json) {
+			console.log(json);
+		},
+		error: function( xhr, status, errorThrown ) {
+			alert( "Sorry, there was a problem!" );
+			console.log( "Error: " + errorThrown );
+			console.log( "Status: " + status );
+			console.dir( xhr );
+		},
+		complete: function( xhr, status ) {
+			console.log( "The request is complete!" );
+		}	
+	});
 }
 
 function fail(err) {
