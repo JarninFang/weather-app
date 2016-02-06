@@ -54,7 +54,7 @@ function showPosition(position) {
 		success: function(json) {
 			console.log(json);
 			$('#temperature').text(KtoF(json.main.temp));
-			$('#description').text(json.weather.main);
+			$('#description').text(json.weather[0].main);
 		},
 		error: function( xhr, status, errorThrown ) {
 			alert( "Sorry, there was a problem!" );
