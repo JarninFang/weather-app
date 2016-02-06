@@ -43,6 +43,7 @@ function showPosition(position) {
 	coordParams = {
 		lat: position.coords.latitude,
 		lon: position.coords.longitude
+		appid: "70da69383c51677ea8c5b9e75ffa0dd2"
 	};
 	str = jQuery.param(coordParams);
 	getUrl = getUrl + str;
