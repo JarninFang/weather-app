@@ -24,7 +24,7 @@ function showPosition(position) {
 		type: "GET",
 		success: function(xml) {
 			console.log("success");
-			console.log(xml.name);
+			console.log($(xml).find('name'));
 		},
 		error: function( xhr, status, errorThrown ) {
 			alert( "Sorry, there was a problem!" );
