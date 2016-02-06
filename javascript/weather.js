@@ -23,10 +23,9 @@ function showPosition(position) {
 		url: getUrl,
 		type: "GET",
 		success: function(xml) {
-			console.log("success");
-			console.log(xml);
-			var $test = $(xml).find('geonames > geoname > name').text();
-			console.log($test);
+			//traverses through xml and gets city name
+			var test = $(xml).find('geonames > geoname > name').text();
+			$(#location-text).text(test);
 		},
 		error: function( xhr, status, errorThrown ) {
 			alert( "Sorry, there was a problem!" );
