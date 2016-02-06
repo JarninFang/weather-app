@@ -24,7 +24,7 @@ function showPosition(position) {
 		type: "GET",
 		success: function(xml) {
 			console.log("success");
-			console.log("Here is the xml" + xml);
+			console.log(xml.name);
 		},
 		error: function( xhr, status, errorThrown ) {
 			alert( "Sorry, there was a problem!" );
@@ -33,7 +33,7 @@ function showPosition(position) {
 			console.dir( xhr );
 		},
 		complete: function( xhr, status ) {
-			alert( "The request is complete!" );
+			console.log( "The request is complete!" );
 		}	
 	});
 	$('#location-text').text();
