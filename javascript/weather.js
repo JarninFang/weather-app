@@ -24,7 +24,7 @@ function showPosition(position) {
 		type: "GET",
 		success: function(xml) {
 			console.log("success");
-			console.log(xml.getElementById(name));
+			console.log(xml.getElementsByTagName('name'));
 		},
 		error: function( xhr, status, errorThrown ) {
 			alert( "Sorry, there was a problem!" );
