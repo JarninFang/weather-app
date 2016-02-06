@@ -53,6 +53,7 @@ function showPosition(position) {
 		type:"GET",
 		success: function(json) {
 			console.log(json);
+			$('#temperature').text(json.main.temp);
 		},
 		error: function( xhr, status, errorThrown ) {
 			alert( "Sorry, there was a problem!" );
@@ -68,4 +69,8 @@ function showPosition(position) {
 
 function fail(err) {
 	console.warn(err.message);
+}
+
+function KtoF(kelvin) {
+	return (kelvin x (9/5) - 459.67);
 }
