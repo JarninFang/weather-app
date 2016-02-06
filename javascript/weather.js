@@ -25,7 +25,7 @@ function showPosition(position) {
 		success: function(xml) {
 			console.log("success");
 			var parsedXML = $.parseXML(xml);
-			console.log($(parsedXML).find("name"));
+			console.log($(parsedXML).find("name").text());
 		},
 		error: function( xhr, status, errorThrown ) {
 			alert( "Sorry, there was a problem!" );
