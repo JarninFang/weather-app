@@ -24,13 +24,7 @@ function showPosition(position) {
 		type: "GET",
 		success: function(xml) {
 			console.log("success");
-			var parsedXML = $.parseXML(xml);
-			$(parsedXML).find("geoname").each(function() {
-				console.log($('[name]', this).text());
-			})
-			console.log("xml: " + parsedXML);
-			console.log(parsedXML)
-			console.log($(parsedXML).find("name").text());
+			console.log(xml);
 		},
 		error: function( xhr, status, errorThrown ) {
 			alert( "Sorry, there was a problem!" );
