@@ -25,7 +25,7 @@ function showPosition(position) {
 		success: function(xml) {
 			console.log("success");
 			console.log(xml);
-			var $test = $(xml).find('geonames > geoname > name');
+			var $test = $(xml).find('geonames > geoname > name').text();
 			console.log($test);
 		},
 		error: function( xhr, status, errorThrown ) {
