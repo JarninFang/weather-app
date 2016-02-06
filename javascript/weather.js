@@ -1,4 +1,3 @@
-
 $(document).ready(function() {
 	if(navigator.geolocation) {
 		navigator.geolocation.getCurrentPosition(showPosition, fail);
@@ -25,7 +24,7 @@ function showPosition(position) {
 		success: function(xml) {
 			//traverses through xml and gets city name
 			var test = $(xml).find('geonames > geoname > name').text();
-			$(#location-text).text(test);
+			$('#location-text').text(test);
 		},
 		error: function( xhr, status, errorThrown ) {
 			alert( "Sorry, there was a problem!" );
