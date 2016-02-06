@@ -47,7 +47,7 @@ function showPosition(position) {
 	};
 	str = jQuery.param(coordParams);
 	getUrl = getUrl + str;
-
+	console.log(getUrl);
 	$.ajax({
 		url: getUrl,
 		type:"GET",
