@@ -42,7 +42,7 @@ function showPosition(position) {
 	getUrl = "http://api.openweathermap.org/data/2.5/weather?"
 	coordParams = {
 		lat: position.coords.latitude,
-		lon: position.coords.longitude
+		lon: position.coords.longitude,
 		appid: "70da69383c51677ea8c5b9e75ffa0dd2"
 	};
 	str = jQuery.param(coordParams);
