@@ -25,6 +25,8 @@ function showPosition(position) {
 		success: function(xml) {
 			console.log("success");
 			console.log(xml);
+			var $test = xml.find('geonames > geoname > name');
+			console.log($test);
 		},
 		error: function( xhr, status, errorThrown ) {
 			alert( "Sorry, there was a problem!" );
