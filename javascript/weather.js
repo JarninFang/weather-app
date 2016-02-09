@@ -10,7 +10,7 @@ function showPosition(position) {
 	var coordParams = {
 		lat: position.coords.latitude,
 		lng: position.coords.longitude,
-		username: "demo"
+		username: "jarninfang"
 	};
 
 	var str = jQuery.param(coordParams);
