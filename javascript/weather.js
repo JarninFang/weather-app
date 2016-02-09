@@ -75,6 +75,7 @@ function showPosition(position) {
 			description = json.weather[0].main;
 			$('#temperature').text(temperature);
 			$('#description').text(description);
+			updateBackground(description);
 		},
 		error: function( xhr, status, errorThrown ) {
 			alert( "Sorry, there was a problem!" );
@@ -102,4 +103,10 @@ function FtoC(fahrenheit) {
 
 function CtoF(celsius) {
 	return Math.round((celsius * 1.8) + 32);
+}
+
+function updateBackground(description) {
+	if(description == "Clear") {
+		document.body.style.backgroundImage = "url('https://images.unsplash.com/photo-1428535172630-fb1c050ac3e0?crop=entropy&dpr=1.5&fit=crop&fm=jpg&h=600&ixjsv=2.1.0&ixlib=rb-0.3.5&q=66&w=1300')";
+	}
 }
