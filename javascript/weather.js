@@ -108,5 +108,11 @@ function CtoF(celsius) {
 function updateBackground(description) {
 	if(description == "Clear") {
 		document.body.style.backgroundImage = "url('https://images.unsplash.com/photo-1428535172630-fb1c050ac3e0?crop=entropy&dpr=1.5&fit=crop&fm=jpg&h=600&ixjsv=2.1.0&ixlib=rb-0.3.5&q=66&w=1300')";
+	} else if(description == "Snow") {
+		document.body.status.backgroundImage = "url('https://images.unsplash.com/photo-1447877015176-3099cb49cd6a?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&w=1080&fit=max&s=1f5b6605ce035d751113e7c92cfd2116')";
+	} else if(description == "Rain") {
+		document.body.style.backgroundImage = "url('https://images.unsplash.com/photo-1428592953211-077101b2021b?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&w=1080&fit=max&s=9dee70ba78c49619bc7f5c8a91778f2b')";
+	} else if(description == "Clouds") {
+		document.body.style.backgroundImage = "url('https://images.unsplash.com/photo-1446367819189-c48fb912db4d?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&w=1080&fit=max&s=355e23d399f55c5f46a8ed5e3f3d35ee')";
 	}
 }
