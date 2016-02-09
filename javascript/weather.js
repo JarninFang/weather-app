@@ -1,7 +1,25 @@
+//0 for fahrenheit, 1 for celsius
+var tempState = 0;
+var temperature;
+var description;
+
 $(document).ready(function() {
 	if(navigator.geolocation) {
 		navigator.geolocation.getCurrentPosition(showPosition, fail);
 	}
+	
+	$("#temp-button").click(function() {
+		if(tempState == 0) {
+			temperature = FtoC(temperature);
+			tempState = 1;
+			$("#temp-button").text("Fahrenheit");
+		} else {
+			temperature = CtoF(temperature);
+			tempState = 0;
+			$("#temp-button").text("Celsius");
+		}
+		$("#temperature").text(temperature);
+	});
 });
 
 function showPosition(position) {
@@ -53,8 +71,10 @@ function showPosition(position) {
 		type:"GET",
 		success: function(json) {
 			console.log(json);
-			$('#temperature').text(KtoF(json.main.temp));
-			$('#description').text(json.weather[0].main);
+			temperature = KtoF(Number(json.main.temp));
+			description = json.weather[0].main;
+			$('#temperature').text(temperature);
+			$('#description').text(description);
 		},
 		error: function( xhr, status, errorThrown ) {
 			alert( "Sorry, there was a problem!" );
@@ -74,4 +94,12 @@ function fail(err) {
 
 function KtoF(kelvin) {
 	return Math.round(kelvin * (9/5) - 459.67);
+}
+
+function FtoC(fahrenheit) {
+	return Math.round((fahrenheit - 32) / 1.8);
+}
+
+function CtoF(celsius) {
+	return Math.round((celsius * 1.8) + 32);
 }
