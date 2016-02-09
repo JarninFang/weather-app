@@ -73,5 +73,5 @@ function fail(err) {
 }
 
 function KtoF(kelvin) {
-	return (kelvin * (9/5) - 459.67);
+	return Math.round(kelvin * (9/5) - 459.67);
 }
