@@ -23,7 +23,7 @@ $(document).ready(function() {
 });
 
 function showPosition(position) {
-	var getUrl = "http://api.geonames.org/findNearbyPlaceName?";
+	var getUrl = "https://api.geonames.org/findNearbyPlaceName?";
 	//Convert latitude and longitude into URL params
 	var coordParams = {
 		lat: position.coords.latitude,
@@ -57,7 +57,7 @@ function showPosition(position) {
 	});
 
 	//Make ajax call to API to get weather
-	getUrl = "http://api.openweathermap.org/data/2.5/weather?"
+	getUrl = "https://api.openweathermap.org/data/2.5/weather?"
 	coordParams = {
 		lat: position.coords.latitude,
 		lon: position.coords.longitude,
